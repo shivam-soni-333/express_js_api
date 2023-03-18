@@ -8,8 +8,11 @@ connectdb();
 const app = express();  
 const port = process.env.PORT||5000;
 app.use(express.json());
-app.use("/products",require("./routes/generalRoutes"));
-app.use("/category",require("./routes/categoryRoutes"));
+app.use("/api/products",require("./routes/productRoutes"));
+app.use("/api/category",require("./routes/categoryRoutes"));
+app.use("/api/users",require("./routes/userRoutes"));
+
+
 app.use(errorHandler);
 app.listen(port,()=>{
     console.log(`server running on ${port}`);
