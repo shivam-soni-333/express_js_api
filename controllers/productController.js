@@ -25,7 +25,7 @@ const getProductDetailById =asynchandler(async(req,res)=>{
 
 //@desc create product
 //@route POST /products
-//@access public 
+//@access private 
 const createProduct = asynchandler(async(req,res,errorHandler)=>{
     const{name,price} = req.body;
     if(!name || !price)
